@@ -17,7 +17,7 @@ export default function Switcher() {
 
   return (
     <>
-      {/* <div className="switcher ">
+      <div className="switcher ">
         <div className="flex items-center justify-center py-3 switcher-body rounded-3xl mx-3">
           <div className={darkSide ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => toggleDarkMode(true)}>
             <img src={Dark} className="brightness-0 dark:filter-none pointer" alt="error" />
@@ -29,7 +29,7 @@ export default function Switcher() {
             <img src={Light} className="brightness-0 dark:filter-none pointer" alt="error" />
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
