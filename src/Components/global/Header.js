@@ -7,13 +7,13 @@ export const Header = () => {
   return (
     <>
       <div className="flex justify-between items-center">
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <p className="good-morning font-inter font-semibold text-black dark:text-white">👏🏻Good morning.</p>
         </div>
 
         <div className="hidden md:block w-5 md:flex-1 sm:flex-none">
           <p className="font-inter white-color"></p>
-        </div>
+        </div> */}
 
         <div className="flex md:flex-1 sm:flex-none items-center">
           <img
