@@ -45,7 +45,7 @@ const Layout = () => {
         className={` ${open ? "w-64 padding-5" : "w-0 padding-tm-5"
           } bg-white layout_ h-screen  relative duration-300 md:fixed z-10`}
       >
-        <img
+        {/* <img
           src={toggle}
           className={`toggle brightness-0 hidden md:block sm:top-[53px] ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
@@ -64,7 +64,7 @@ const Layout = () => {
           >
             Nextep
           </h1>
-        </div>
+        </div> */}
         <ul className=" pz">
           <li
             onClick={() => activePresale()}
