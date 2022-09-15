@@ -1,0 +1,27 @@
+.switcher {
+    /* absolute w-[74%] bottom-[38px] */
+    position: absolute;
+    bottom: 38px;
+    width: 74%;
+
+}
+
+.switcher-body {
+    background: #F6F6F6;
+}
+
+.dark .switcher-body {
+    background: #232323 !important;
+}
+
+.swithcer-ele {
+    background: #0F0F0F;
+}
+
+.dark .swithcer-ele {
+    background: #FFFF !important;
+}
+
+.opacity10 {
+    opacity: 10%;
+}

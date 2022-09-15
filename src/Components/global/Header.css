@@ -1,0 +1,41 @@
+/* <p className="font-inter text-[22px] font-semibold text-[#0F0F0F] dark:text-[#ffff]">👏🏻Good morning.</p> */
+
+.good-morning {
+    font-size: 22px;
+    color: #0f0f0f;
+}
+
+.dark .good-morning {
+    color: #fff !important;
+}
+
+.nextep-font {
+    font-size: 20px;
+    color: #0f0f0f;
+    margin-left: 8px;
+}
+
+.dark .nextep-font {
+    color: #FDFDFD !important;
+}
+
+.wallet-btn {
+    background: #C629EC;
+    padding: 15px 18px;
+    border-radius: 5px;
+}
+
+.nextep-h1 {
+    line-height: 63px !important;
+}
+
+.wallet-p {
+    margin-bottom: 0;
+}
+
+@media (max-width:600px) {
+    .wallet-btn {
+        border-radius: 50%;
+        padding: 12px 11px;
+    }
+}

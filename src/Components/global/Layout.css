@@ -1,0 +1,60 @@
+.layout {
+    background: #FAFAFA;
+    height: 100vh;
+}
+
+.dark .layout {
+    height: 100vh;
+    background: #0F0F0F !important;
+}
+
+.dark .layout_ {
+    background: #181818 !important;
+}
+
+.toggle {
+    /* dark:filter-none hidden fixed cursor-pointer left-[28px] top-[46px] z-[3] md:block sm:top-[53px] */
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    left: 28px;
+    top: 46px;
+    z-index: 11;
+
+}
+
+.dark .toggle {
+    filter: none !important;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.next-font {
+    color: #0F0F0F;
+}
+
+.dark .next-font {
+    color: #FDFDFD;
+}
+
+.p-7 {
+    padding: 1.75rem;
+}
+
+.padding-5 {
+    padding: 38px 26px 0;
+}
+
+.padding-lr-5 {
+    padding: 0 26px;
+}
+
+.padding-tm-5 {
+    padding: 38px 0;
+}
+
+.my-h1 {
+    line-height: 62px !important;
+}
