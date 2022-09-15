@@ -9,12 +9,12 @@ const RPCS = {
     56: "https://bsc-dataseed.binance.org/",
     97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
     250: "https://rpc.ftm.tools/",
-    // 4002: "https://rpc.testnet.fantom.network",
-    // 26: "https://mainnet-rpc.icicbchain.org",
-    // 417: "https://testnet-rpc.icicbchain.org",
-    // 1337: "http://localhost:7545",
-    // 31337: "http://localhost:8545/",
-    // 4: "https://rinkeby.infura.io/v3/580d6de4d2694cbdbee111d2f553dbcc"
+    4002: "https://rpc.testnet.fantom.network",
+    26: "https://mainnet-rpc.icicbchain.org",
+    417: "https://testnet-rpc.icicbchain.org",
+    1337: "http://localhost:7545",
+    31337: "http://localhost:8545/",
+    4: "https://rinkeby.infura.io/v3/580d6de4d2694cbdbee111d2f553dbcc"
 }
 
 const providers = {

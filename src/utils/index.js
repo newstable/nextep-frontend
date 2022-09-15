@@ -27,9 +27,9 @@ function toBigNum(value, d) {
  * @param {Number} value - data that need to be change
  * @param {Number} d - decimals
  */
-// function fromBigNum(value, d) {
-//   return parseFloat(ethers.utils.formatUnits(value, d));
-// }
+function fromBigNum(value, d) {
+  return parseFloat(ethers.utils.formatUnits(value, d));
+}
 
 const toHex = (num) => {
   const val = Number(num);
