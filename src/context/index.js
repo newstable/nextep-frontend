@@ -87,8 +87,6 @@ export default function Provider({ children }) {
             // var addCoin1 = await signedPresaleContract.addStableCoin("0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684", true);
             // await addCoin1.wait();
             // console.log("added");
-
-            console.log(state.tokenAddress, toBigNum(amount, 18));
             var tx = await signedPresaleContract.buyWithStableCoin(state.tokenAddress, toBigNum(amount, 18));
             await tx.wait();
             NotificationManager.success("Buy Success");
