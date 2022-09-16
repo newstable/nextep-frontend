@@ -14,7 +14,7 @@
 }
 
 .switcher-body {
-    background: #F6F6F6;
+    background: #e9e9e9;
 }
 
 .dark .switcher-body {
@@ -22,13 +22,13 @@
 }
 
 .swithcer-ele {
-    background: #0F0F0F;
+    background: #0a0a0a;
 }
 
 .dark .swithcer-ele {
-    background: #FFFF !important;
+    background: rgb(255, 255, 255) !important;
 }
 
-.opacity10 {
-    opacity: 10%;
+.opacity20 {
+    opacity: 20%;
 }

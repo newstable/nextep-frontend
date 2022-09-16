@@ -19,6 +19,16 @@
     border-radius: 20px;
 }
 
+.border-black {
+    --tw-border-opacity: 1;
+    border-color: rgba(0, 0, 0, var(--tw-border-opacity));
+}
+
+.dark .dark\:border-white {
+    --tw-border-opacity: 1;
+    border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+}
+
 .p-21 {
     padding: 0 21px;
 }
