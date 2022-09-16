@@ -36,15 +36,6 @@ const Layout = () => {
     setMigrationActive(true);
   };
 
-  // useEffect(() => {
-  //   console.log(1);
-  //   if (window.innerWidth < 768) {
-  //     setOpen(false);
-  //   } else {
-  //     setOpen(true);
-  //   }
-  // });
-
   return (
     <div className="layout flex  ">
       <div
