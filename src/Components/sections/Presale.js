@@ -90,7 +90,7 @@ export const Presale = ({ migration }) => {
                     </label>
                     <div className="flex flex-row justify-between">
                       <p className="font-inter text-slate-400 text-sm">
-                        {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
+                        {address ? address.slice(0, 8) + "..." + address.slice(address.length - 8, address) : "Please connect Wallet"}
                       </p>
                       <img src={Copy} width="28" className="dark:hidden"></img>
                       <img src={Copy_white} width="28" className="dark:block hidden"></img>
