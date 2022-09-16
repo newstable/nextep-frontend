@@ -12,7 +12,9 @@ import USDT from "../../Assets/images/tether-usdt-logo.svg";
 import NextBnB from "../../Assets/images/binance-coin-seeklogo.com.svg";
 import { useBlockchainContext } from '../../context';
 import ConnectButton from "../global/ConnectWalletButton";
+import { NotificationManager } from "react-notifications";
 import './Presale.css';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 const addresses = [
   "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
   "0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684"
@@ -25,6 +27,7 @@ export const Presale = ({ migration }) => {
   const [pay, setPayValue] = useState(0);
   const [item, setItemActive] = useState(false);
   const { address, tokenAddress } = state;
+  const [copied, setCopied] = useState(false);
 
   const onReceiveChange = (e) => {
     setRecieveValue(e.target.value);
@@ -35,6 +38,15 @@ export const Presale = ({ migration }) => {
     setPayValue(e.target.value);
     setRecieveValue(e.target.value / 1000);
   };
+
+  useEffect(() => {
+    if (copied) {
+      NotificationManager.success("Successfully Copied!", "Success");
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    }
+  }, [copied])
 
   const onBuy = async () => {
     await buy(receive);
@@ -63,19 +75,21 @@ export const Presale = ({ migration }) => {
             <p className="font-inter text-color-1 dark:text-slate-500 text-sm mb-4">
               Select wallet
             </p>
-            <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
-              <div className="flex items-center">
-                <img src={Img} alt="error" />
-                <div className="flex flex-col ml-5">
-                  <label className="font-inter text-color-1 dark:text-white text-base">
-                    Address
-                  </label>
-                  <p className="font-inter text-slate-400 text-sm">
-                    {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
-                  </p>
+            <CopyToClipboard onCopy={() => setCopied(true)} text={address}>
+              <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
+                <div className="flex items-center">
+                  <img src={Img} alt="error" />
+                  <div className="flex flex-col ml-5">
+                    <label className="font-inter text-color-1 dark:text-white text-base">
+                      Address
+                    </label>
+                    <p className="font-inter text-slate-400 text-sm">
+                      {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </CopyToClipboard>
 
             <p className="font-inter text-slate-400 text-sm mb-2">
               You Pay
