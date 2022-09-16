@@ -16,7 +16,8 @@ import { NotificationManager } from "react-notifications";
 import './Presale.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loading from "../../Assets/loader.gif";
-import Copy from "../../Assets/copy.svg";
+import Copy from "../../Assets/copy.png";
+import Copy_white from "../../Assets/copy-white.png";
 const addresses = [
   "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
   "0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684"
@@ -91,7 +92,8 @@ export const Presale = ({ migration }) => {
                       <p className="font-inter text-slate-400 text-sm">
                         {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
                       </p>
-                      <img src={Copy} width="20" className="dark:hidden"></img>
+                      <img src={Copy} width="28" className="dark:hidden"></img>
+                      <img src={Copy_white} width="28" className="dark:block hidden"></img>
                     </div>
                   </div>
                 </div>

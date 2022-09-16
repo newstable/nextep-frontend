@@ -683,6 +683,10 @@ input:checked+.toggle-bg {
     display: none;
 }
 
+.dark .dark\:block {
+    display: block;
+}
+
 .pointer-events-none {
     pointer-events: none
 }
