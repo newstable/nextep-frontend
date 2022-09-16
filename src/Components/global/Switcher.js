@@ -17,13 +17,13 @@ export default function Switcher() {
 
   return (
     <>
-      <div className="switcher ">
-        <div className="flex items-center justify-center py-3 switcher-body rounded-3xl mx-3">
+      <div className="switcher">
+        <div className="flex items-center justify-between py-3 switcher-body rounded-3xl mx-3 switcher-style-1">
           <div className={darkSide ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => toggleDarkMode(true)}>
             <img src={Dark} className="brightness-0 dark:filter-none pointer" alt="error" />
           </div>
 
-          <div className="w-1 h-5 swithcer-ele mx-5 opacity10"></div>
+          <div className="width-1 h-5 swithcer-ele mx-5 opacity10"></div>
 
           <div className={darkSide === false ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => toggleDarkMode(false)}>
             <img src={Light} className="brightness-0 dark:filter-none pointer" alt="error" />
