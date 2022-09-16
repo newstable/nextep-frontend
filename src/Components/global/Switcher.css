@@ -9,6 +9,10 @@
     padding: 0 15px;
 }
 
+.dark .dark\:switcher-style-1 {
+    padding: 0;
+}
+
 .width-1 {
     width: 3px;
 }

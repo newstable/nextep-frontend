@@ -97,7 +97,7 @@ const Layout = () => {
             </span>
           </li> */}
         </ul>
-        <Switcher />
+        <Switcher open={open} />
       </div>
       <div className="flex-1 p-7 relative">
         <Header />
