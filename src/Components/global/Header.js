@@ -27,15 +27,7 @@ export const Header = () => {
             Nextep
           </h1>
         </div>
-
         <ConnectWalletButton img={"Wallet"} styleNames={"wallet-btn flex items-center cursor-pointer"} styleP={"font-inter white ml-3 wallet-p sm:hidden"} />
-
-        {/* <button className="wallet-btn flex items-center cursor-pointer">
-          <img src={Wallet} alt="error" />
-          <p className="font-inter white ml-3 wallet-p">
-            <ConnectWalletButton />
-          </p>
-        </button> */}
       </div>
     </>
   );
