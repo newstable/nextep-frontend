@@ -42,7 +42,7 @@ const Layout = () => {
   return (
     <div className="layout flex  ">
       <div
-        className={` ${open ? "w-64 padding-5" : "w-0 padding-tm-5"
+        className={` ${open ? "width-64 padding-5" : "w-0 padding-tm-5"
           } bg-white layout_ h-screen  relative duration-300 md:fixed z-10`}
       >
         <img
@@ -65,7 +65,7 @@ const Layout = () => {
             Nextep
           </h1>
         </div>
-        <ul className=" pz">
+        <ul className="padding-11">
           <li
             onClick={() => activePresale()}
             className={`mt-10 flex  rounded-md py-3 px-2 mb-5 cursor-pointer items-center 

@@ -21,7 +21,7 @@
 
 .border-black {
     --tw-border-opacity: 1;
-    border-color: rgba(0, 0, 0, var(--tw-border-opacity));
+    border-color: rgba(150, 150, 150, var(--tw-border-opacity));
 }
 
 .display-center {

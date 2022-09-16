@@ -12,6 +12,14 @@
     background: #181818 !important;
 }
 
+.padding-11 {
+    padding-top: 45px;
+}
+
+.width-64 {
+    width: 220px;
+}
+
 .toggle {
     /* dark:filter-none hidden fixed cursor-pointer left-[28px] top-[46px] z-[3] md:block sm:top-[53px] */
     display: none;
