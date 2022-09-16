@@ -1052,6 +1052,21 @@ video {
     }
 }
 
+.tran-1 {
+    animation-name: example;
+    animation-duration: 3s;
+}
+
+@keyframes example {
+    from {
+        margin-top: -900px;
+    }
+
+    to {
+        margin-top: 0;
+    }
+}
+
 @media (max-width:639px) {
     .sm\:top-\[53px\] {
         top: 53px
@@ -1087,6 +1102,21 @@ video {
         transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
     }
 
+    .sm\:tran-1 {
+        animation-name: example-1;
+        animation-duration: 3s;
+    }
+
+    @keyframes example-1 {
+        from {
+            margin-top: -900px;
+        }
+
+        to {
+            margin-top: 90px;
+        }
+    }
+
     .sm\:flex-col {
         flex-direction: column
     }
@@ -1101,6 +1131,10 @@ video {
 
     .sm\:pb-\[12px\] {
         padding-bottom: 12px
+    }
+
+    .sm\:mt-9 {
+        margin-top: 90px;
     }
 
     .sm\:pr-\[11px\] {
