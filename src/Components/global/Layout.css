@@ -20,6 +20,10 @@
     width: 220px;
 }
 
+.rotate-360 {
+    transform: translate(0, 0) rotate(360deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
 .toggle {
     /* dark:filter-none hidden fixed cursor-pointer left-[28px] top-[46px] z-[3] md:block sm:top-[53px] */
     display: none;

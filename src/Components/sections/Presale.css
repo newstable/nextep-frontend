@@ -30,6 +30,14 @@
     align-items: center;
 }
 
+.label-style-1 {
+    margin: 0;
+}
+
+.pading-3 {
+    padding: 15px;
+}
+
 .dark .dark\:border-white {
     --tw-border-opacity: 1;
     border-color: rgba(255, 255, 255, var(--tw-border-opacity));

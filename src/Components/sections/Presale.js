@@ -81,11 +81,11 @@ export const Presale = ({ migration }) => {
               Select wallet
             </p>
             <CopyToClipboard onCopy={() => setCopied(true)} text={address}>
-              <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
+              <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
                 <div className="flex items-center w-full">
                   <img src={Img} alt="error" />
                   <div className="flex flex-col ml-5 w-full">
-                    <label className="font-inter text-color-1 dark:text-white text-base">
+                    <label className="label-style-1 font-inter text-color-1 dark:text-white text-base">
                       Address
                     </label>
                     <div className="flex flex-row justify-between">
@@ -207,15 +207,15 @@ export const Presale = ({ migration }) => {
           <div className="flex justify-end">
             {address ?
               loading ?
-                <button className="width-60 pt-2 pb-2 display-center bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
+                <button className="width-60 pt-2 pb-2 display-center wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
                   <img src={Loading} style={{ height: "35px" }}></img>
                 </button>
                 :
-                <button onClick={onBuy} className="width-60 pt-4 pb-4 bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
+                <button onClick={onBuy} className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
                   VALIDATE
                 </button>
               :
-              <div className="width-60 pt-4 pb-4 bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%] flex-center">
+              <div className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%] flex-center">
                 <ConnectButton styleP={"font-inter white ml-3 wallet-p"} />
               </div>
             }
