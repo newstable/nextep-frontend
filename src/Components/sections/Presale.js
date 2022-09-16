@@ -71,7 +71,7 @@ export const Presale = ({ migration }) => {
                     Address
                   </label>
                   <p className="font-inter text-slate-400 text-sm">
-                    4rID...2dkP
+                    {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
                   </p>
                 </div>
               </div>
