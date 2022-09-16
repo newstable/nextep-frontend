@@ -24,6 +24,12 @@
     border-color: rgba(0, 0, 0, var(--tw-border-opacity));
 }
 
+.display-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dark .dark\:border-white {
     --tw-border-opacity: 1;
     border-color: rgba(255, 255, 255, var(--tw-border-opacity));

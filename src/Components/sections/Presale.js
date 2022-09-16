@@ -15,13 +15,14 @@ import ConnectButton from "../global/ConnectWalletButton";
 import { NotificationManager } from "react-notifications";
 import './Presale.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Loading from "../../Assets/loader.gif";
 const addresses = [
   "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
   "0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684"
 ]
 
 export const Presale = ({ migration }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [state, { dispatch, buy }] = useBlockchainContext();
   const [receive, setRecieveValue] = useState(0);
   const [pay, setPayValue] = useState(0);
@@ -49,7 +50,9 @@ export const Presale = ({ migration }) => {
   }, [copied])
 
   const onBuy = async () => {
+    setLoading(true);
     await buy(receive);
+    setLoading(false);
   }
 
   // useEffect(() => {
@@ -197,9 +200,15 @@ export const Presale = ({ migration }) => {
           </div>
           <div className="flex justify-end">
             {address ?
-              <button onClick={onBuy} className="width-60 pt-4 pb-4 bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
-                VALIDATE
-              </button> :
+              loading ?
+                <button className="width-60 pt-2 pb-2 display-center bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
+                  <img src={Loading} style={{ height: "35px" }}></img>
+                </button>
+                :
+                <button onClick={onBuy} className="width-60 pt-4 pb-4 bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
+                  VALIDATE
+                </button>
+              :
               <div className="width-60 pt-4 pb-4 bg-fuchsia-500 text-sm text-white font-inter rounded-md mt-6 sm:w-[100%] flex-center">
                 <ConnectButton styleP={"font-inter white ml-3 wallet-p"} />
               </div>

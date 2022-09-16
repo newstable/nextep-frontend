@@ -94,7 +94,7 @@ export default function Provider({ children }) {
             NotificationManager.success("Buy Success");
         } catch (err) {
             console.log(err.message);
-            NotificationManager.error("Buy error");
+            NotificationManager.error("Buy error", "Error");
         }
     }
 
