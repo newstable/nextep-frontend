@@ -74,7 +74,7 @@ export default function Provider({ children }) {
         try {
             const myBalance = fromBigNum(await checkBalance());
             if (amount > myBalance) {
-                NotificationManager.error("Insufficient Balance");
+                NotificationManager.error("Insufficient Balance.Please check your Balance.", "Error");
                 return false;
             }
             var erc = state.contract.connect(state.signer);
