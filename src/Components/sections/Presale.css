@@ -24,6 +24,21 @@
     border-color: rgba(150, 150, 150, var(--tw-border-opacity));
 }
 
+.tran-1 {
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    from {
+        margin-top: -1000px;
+    }
+
+    to {
+        margin-top: 0;
+    }
+}
+
 .display-center {
     display: flex;
     justify-content: center;

@@ -70,7 +70,7 @@ export const Presale = ({ migration }) => {
   };
 
   return (
-    <div className="presale-card">
+    <div className="presale-card tran-1">
       <div className="absolute p-21 sm:w-[100%] sm:top-24 sm:-translate-y-2/4">
         <div className="px-8 py-7 bg-white dark:bg-black rounded-3xl">
           <div>
