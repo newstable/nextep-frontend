@@ -13,31 +13,37 @@ const Layout = () => {
   const [presale, setPresaleActive] = useState(true);
   const [migration, setMigrationActive] = useState(false);
 
+  const [screenSize, getDimension] = useState(window.innerWidth);
+  const setDimension = () => {
+    getDimension(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', setDimension);
+    if (window.innerWidth < 768) {
+      setOpen(false);
+    } else {
+      setOpen(true);
+    }
+  }, [screenSize])
   const activePresale = () => {
     setPresaleActive(true);
     setMigrationActive(false);
   };
-
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 768) {
-  //         setOpen(false)
-  //     } else {
-  //         setOpen(true)
-  //     }
-  //   }
 
   const activeMigration = () => {
     setPresaleActive(false);
     setMigrationActive(true);
   };
 
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setOpen(false);
-    } else {
-      setOpen(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log(1);
+  //   if (window.innerWidth < 768) {
+  //     setOpen(false);
+  //   } else {
+  //     setOpen(true);
+  //   }
+  // });
 
   return (
     <div className="layout flex  ">
