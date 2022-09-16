@@ -16,6 +16,7 @@ import { NotificationManager } from "react-notifications";
 import './Presale.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Loading from "../../Assets/loader.gif";
+import Copy from "../../Assets/copy.svg";
 const addresses = [
   "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
   "0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684"
@@ -80,15 +81,18 @@ export const Presale = ({ migration }) => {
             </p>
             <CopyToClipboard onCopy={() => setCopied(true)} text={address}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
-                <div className="flex items-center">
+                <div className="flex items-center w-full">
                   <img src={Img} alt="error" />
-                  <div className="flex flex-col ml-5">
+                  <div className="flex flex-col ml-5 w-full">
                     <label className="font-inter text-color-1 dark:text-white text-base">
                       Address
                     </label>
-                    <p className="font-inter text-slate-400 text-sm">
-                      {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
-                    </p>
+                    <div className="flex flex-row justify-between">
+                      <p className="font-inter text-slate-400 text-sm">
+                        {address.slice(0, 8) + "..." + address.slice(address.length - 8, address)}
+                      </p>
+                      <img src={Copy} width="20" className="dark:hidden"></img>
+                    </div>
                   </div>
                 </div>
               </div>
