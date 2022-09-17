@@ -1,6 +1,6 @@
 {
     "token": {
-        "address": "0x936D7a3BbF2034b15371fAB891F777FC635BDdF6",
+        "address": "0xFd9Fd678C8EF9a271862edCFc0402B38B665Af69",
         "abi": [
             {
                 "inputs": [
@@ -291,7 +291,7 @@
         ]
     },
     "presale": {
-        "address": "0x4e66a9DD2dfDA89C001f3E1f1b66dD2C62e35EC4",
+        "address": "0x4855861e14152B250FbeBF14b18eE29c806752fb",
         "abi": [
             {
                 "inputs": [
@@ -876,6 +876,19 @@
                     }
                 ],
                 "name": "setBuyLimit",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "presaleToken_",
+                        "type": "address"
+                    }
+                ],
+                "name": "setPresaleToken",
                 "outputs": [],
                 "stateMutability": "nonpayable",
                 "type": "function"

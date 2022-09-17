@@ -52,6 +52,10 @@ const ConnectButton = ({ styleNames, img, styleP }) => {
         }
     }, [account])
 
+    useEffect(() => {
+        setAccount(state.address);
+    }, [state.address])
+
     const switchNetwork = async (network) => {
         try {
             await library.provider.request({

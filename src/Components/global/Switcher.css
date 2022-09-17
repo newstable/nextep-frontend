@@ -26,13 +26,9 @@
 }
 
 .swithcer-ele {
-    background: #0a0a0a;
+    background: #808080;
 }
 
 .dark .swithcer-ele {
-    background: rgb(255, 255, 255) !important;
-}
-
-.opacity20 {
-    opacity: 20%;
+    background: rgb(131, 131, 131) !important;
 }

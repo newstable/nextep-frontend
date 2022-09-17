@@ -23,7 +23,7 @@ export default function Switcher({ open }) {
             <img src={Dark} className="brightness-0 dark:filter-none pointer" alt="error" />
           </div>
 
-          <div className="width-1 h-5 swithcer-ele mx-5 opacity20"></div>
+          <div className="width-1 h-5 swithcer-ele mx-5"></div>
 
           <div className={darkSide === false ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => toggleDarkMode(false)}>
             <img src={Light} className="brightness-0 dark:filter-none pointer" alt="error" />
