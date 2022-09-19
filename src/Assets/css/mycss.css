@@ -846,7 +846,7 @@ video {
 }
 
 .dark .rs-btn-default {
-    background-color: #0f0f0f !important;
+    background-color: #161616 !important;
     color: #fff !important
 }
 
@@ -865,17 +865,17 @@ video {
 }
 
 .light .rs-dropdown-menu {
-    background-color: transparent;
+    background-color: #c3c3c3;
     color: #0f0f0f !important;
     position: absolute;
-    width: 93px
+    width: 118px
 }
 
 .dark .rs-dropdown-menu {
-    background-color: #0f0f0f;
+    background-color: #161616;
     color: #f6f6f6 !important;
     position: absolute;
-    width: 108px
+    width: 94px;
 }
 
 .rs-dropdown-toggle-caret {

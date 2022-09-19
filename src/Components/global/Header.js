@@ -22,7 +22,7 @@ export const Header = () => {
             className={`w-6 h-8 cursor-pointer duration-500`}
           /> */}
           <h1
-            className={`font-inter text-3xl text-bold font-bold ml-2 nextep-h1 text-1`}
+            className={`font-inter text-3xl text-bold font-bold ml-2 nextep-h1 text-1 md:mr-6`}
           >
             Nextep
           </h1>

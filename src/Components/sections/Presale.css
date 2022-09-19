@@ -56,12 +56,20 @@
 }
 
 .bg-color-1 {
-    background-color: transparent !important;
+    background-color: rgb(231, 231, 231) !important;
+}
+
+.bg-dropdown-1 {
+    background-color: #c3c3c3;
 }
 
 .outline-style-1 {
     border: none;
     outline-width: 0;
+}
+
+.rs-dropdown-menu {
+    border-radius: 0 !important;
 }
 
 .outline-style-1:focus {

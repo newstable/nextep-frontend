@@ -20,7 +20,7 @@ iframe {
 .dark .rs-btn-default {
   display: flex !important;
   align-items: center;
-  background-color: #0F0F0F !important;
+  background-color: #161616 !important;
   color: #fff !important;
   border-radius: 0;
   outline: none;
@@ -46,8 +46,8 @@ iframe {
 
 .dark .rs-dropdown-menu {
   position: absolute;
-  width: 108px;
-  background-color: #0F0F0F;
+  width: 94px;
+  background-color: #161616;
   color: #F6F6F6 !important;
 }
 

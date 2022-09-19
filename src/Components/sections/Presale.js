@@ -109,7 +109,7 @@ export const Presale = ({ migration }) => {
                 <div className="dark:text-white text-black mr-4">My Balance : {amount ? amount : 0}</div>
               </div>
               <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl mb-6 sm:w-[100%]">
-                <div className="flex items-center">
+                <div className="flex items-center flex-grow-7">
                   <div className="flex flex-col">
                     <input
                       onChange={(e) => onReceiveChange(e)}
@@ -126,12 +126,12 @@ export const Presale = ({ migration }) => {
                 </div>
                 <div
                   className={`${migration ? "hide-dropdown" : "show-dropdown"
-                    } flex items-center`}
+                    } flex items-center flex-grow-2`}
                 >
                   {item ? (
                     <Dropdown
                       activeKey="1"
-                      classPrefix={migration ? "flex bg-color-1" : "flex bg-color-1 usd"}
+                      classPrefix={migration ? "flex bg-dropdown-1 dark:bg-dropdown-1 pr-2" : "flex bg-dropdown-1 dark:bg-dropdown-1 usd pr-2"}
                       title={migration ? "Nextep BNB chain" : "USDT"}
                       icon={
                         migration ? (
@@ -155,7 +155,7 @@ export const Presale = ({ migration }) => {
                   ) : (
                     <Dropdown
                       activeKey="1"
-                      classPrefix="flex bg-color-1 busd"
+                      classPrefix="flex bg-dropdown-1 dark:bg-dropdown-1 busd pr-2"
                       title={migration ? "Nextep BNB chain" : "BUSD"}
                       icon={
                         migration ? (
@@ -190,8 +190,8 @@ export const Presale = ({ migration }) => {
                 </p>
                 <div className="dark:text-white text-black mr-4">My CXS Balance : {cxsAmount ? cxsAmount : 0}</div>
               </div>
-              <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-2 rounded-xl sm:w-[100%]">
-                <div className="flex items-center">
+              <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl sm:w-[100%]">
+                <div className="flex items-center flex-grow-7">
                   <div className="flex flex-col">
                     <input
                       onChange={(e) => onPayChange(e)}
@@ -206,9 +206,9 @@ export const Presale = ({ migration }) => {
                     />
                   </div>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-centerflex-grow-2">
                   <img src={CXE} width={25} alt="error" />
-                  <p className="font-inter text-color-1 dark:text-white text-base pr-2 pl-2 mr-3 mg-style-0">
+                  <p className="font-inter text-color-1 dark:text-white text-base mg-style-0 pl-2 mr-5">
                     {migration ? "Nextep Nxchain" : "CXS"}
                   </p>
                 </div>
