@@ -846,7 +846,7 @@ video {
 }
 
 .dark .rs-btn-default {
-    background-color: #161616 !important;
+    background-color: transparent !important;
     color: #fff !important
 }
 
