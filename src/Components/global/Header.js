@@ -1,6 +1,6 @@
 import React from "react";
 import Wallet from "../../Assets/images/Vector (8).svg";
-import logo from "../../Assets/images/lettre n (1) 2.svg";
+import logo from "../../Assets/images/logo-1.png";
 import ConnectWalletButton from "./ConnectWalletButton";
 import './Header.css';
 export const Header = () => {
@@ -19,7 +19,7 @@ export const Header = () => {
           <img
             alt="error"
             src={logo}
-            className={`w-6 h-8 cursor-pointer duration-500`}
+            className={`w-10 cursor-pointer duration-500`}
           />
           <h1
             className={`nextep-font font-inter text-lg text-black dark:text-white text-bold font-bold ml-2 nextep-h1`}

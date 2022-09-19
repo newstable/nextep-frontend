@@ -32,3 +32,11 @@
 .dark .swithcer-ele {
     background: rgb(131, 131, 131) !important;
 }
+
+@media (max-width:767px) {
+    .switcher {
+        position: relative;
+        width: 100%;
+        bottom: 5px;
+    }
+}

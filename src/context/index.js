@@ -29,6 +29,8 @@ function reducer(state, { type, payload }) {
 
 const INIT_STATE = {
     signer: "",
+    amount: 0,
+    cxsAmount: 0,
     provider: null,
     web3Provider: "",
     address: '',
@@ -43,11 +45,52 @@ export default function Provider({ children }) {
     const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     useEffect(() => {
+        if (state.address == "") {
+            dispatch({
+                type: "cxsAmount",
+                payload: 0
+            })
+        } else {
+            setCXSAmount();
+        }
+    }, [state.address])
+
+    const setCXSAmount = async () => {
+        var contract = ERCContract("0xFd9Fd678C8EF9a271862edCFc0402B38B665Af69");
+        const myBalance = fromBigNum(await contract.balanceOf(state.address));
+        dispatch({
+            type: "cxsAmount",
+            payload: myBalance
+        })
+    }
+
+    useEffect(() => {
         dispatch({
             type: "contract",
             payload: ERCContract(state.tokenAddress)
         })
     }, [state.tokenAddress])
+
+    useEffect(() => {
+        if (state.address == "") {
+            dispatch({
+                type: "amount",
+                payload: 0
+            })
+        } else {
+            setAmount();
+        }
+    }, [state.address, state.tokenAddress])
+
+    const setAmount = async () => {
+        var contract = ERCContract(state.tokenAddress);
+        const myBalance = fromBigNum(await contract.balanceOf(state.address));
+        dispatch({
+            type: "amount",
+            payload: myBalance
+        })
+    }
+
     useEffect(() => {
         if (window.ethereum) {
             dispatch({

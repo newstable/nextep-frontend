@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from "react";
-import Img from "../../Assets/images/Rectangle 4374.svg";
+import Img from "../../Assets/images/logo-1.png";
 import { ReactComponent as Solana } from "../../Assets/images/solana-sol-logo 1.svg";
-import CXE from "../../Assets/images/Rectangle 4374 (1).svg";
 import Dex from "../../Assets/images/Frame 1000001031.svg";
 import Crypto from "../../Assets/images/website (4) 1.svg";
 import Mail from "../../Assets/images/mail 1.svg";
@@ -29,7 +28,7 @@ export const Presale = ({ migration }) => {
   const [receive, setRecieveValue] = useState(0);
   const [pay, setPayValue] = useState(0);
   const [item, setItemActive] = useState(false);
-  const { address, tokenAddress } = state;
+  const { address, tokenAddress, amount, cxsAmount } = state;
   const [copied, setCopied] = useState(false);
 
   const onReceiveChange = (e) => {
@@ -83,7 +82,7 @@ export const Presale = ({ migration }) => {
             <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : "Please connect Wallet"}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
                 <div className="flex items-center w-full">
-                  <img src={Img} alt="error" />
+                  <img width={40} src={Img} alt="error" />
                   <div className="flex flex-col ml-5 w-full">
                     <label className="label-style-1 font-inter text-color-1 dark:text-white text-base">
                       Address
@@ -100,107 +99,117 @@ export const Presale = ({ migration }) => {
               </div>
             </CopyToClipboard>
 
-            <p className="font-inter text-slate-400 text-sm mb-2">
-              You Pay
-            </p>
-            <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl mb-6 sm:w-[100%]">
-              <div className="flex items-center">
-                <div className="flex flex-col">
-                  <input
-                    onChange={(e) => onReceiveChange(e)}
-                    value={receive}
-                    type="text"
-                    onKeyPress={(event) => {
-                      if (!/[0-9.]/.test(event.key)) {
-                        event.preventDefault();
-                      }
-                    }}
-                    className="outline-style-1 font-inter text-base text-color-1 bg-color-1 dark:bg-black-1 sm:w-[100%]"
-                  />
-                </div>
+            <div>
+              <div className="flex justify-between">
+                <p className="font-inter text-slate-400 text-sm mb-2">
+                  You Pay
+                </p>
+                <div className="dark:text-white text-black mr-4">My Balance : {amount ? amount : 0}</div>
               </div>
-              <div
-                className={`${migration ? "hide-dropdown" : "show-dropdown"
-                  } flex items-center`}
-              >
-                {item ? (
-                  <Dropdown
-                    activeKey="1"
-                    classPrefix={migration ? "flex bg-color-1 dark:bg-black" : "flex bg-color-1 dark:bg-black usd"}
-                    title={migration ? "Nextep BNB chain" : "USDT"}
-                    icon={
-                      migration ? (
-                        <img src={NextBnB} alt="error" className="w-5" />
-                      ) : (
-                        <img
-                          src={USDT}
-                          className="w-5 h-5"
-                          alt="error"
-                        />
-                      )
-                    }
-                  >
-                    <Dropdown.Item
-                      onSelect={() => selectedMenu(false, 0)}
-                      icon={<Solana />}
-                    >
-                      BUSD
-                    </Dropdown.Item>
-                  </Dropdown>
-                ) : (
-                  <Dropdown
-                    activeKey="1"
-                    classPrefix="flex bg-color-1 dark:bg-black busd"
-                    title={migration ? "Nextep BNB chain" : "BUSD"}
-                    icon={
-                      migration ? (
-                        <img src={NextBnB} alt="error" className="w-5" />
-                      ) : (
-                        <Solana />
-                      )
-                    }
-                  >
-                    <Dropdown.Item
-                      onSelect={() => selectedMenu(true, 1)}
+              <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl mb-6 sm:w-[100%]">
+                <div className="flex items-center">
+                  <div className="flex flex-col">
+                    <input
+                      onChange={(e) => onReceiveChange(e)}
+                      value={receive}
+                      type="text"
+                      onKeyPress={(event) => {
+                        if (!/[0-9.]/.test(event.key)) {
+                          event.preventDefault();
+                        }
+                      }}
+                      className="outline-style-1 font-inter text-base text-color-1 bg-color-1 dark:bg-black-1 sm:w-[100%]"
+                    />
+                  </div>
+                </div>
+                <div
+                  className={`${migration ? "hide-dropdown" : "show-dropdown"
+                    } flex items-center`}
+                >
+                  {item ? (
+                    <Dropdown
+                      activeKey="1"
+                      classPrefix={migration ? "flex bg-color-1 dark:bg-black" : "flex bg-color-1 dark:bg-black usd"}
+                      title={migration ? "Nextep BNB chain" : "USDT"}
                       icon={
-                        <img
-                          src={USDT}
-                          className="w-5 h-5"
-                          alt="error"
-                        />
+                        migration ? (
+                          <img src={NextBnB} alt="error" className="w-5" />
+                        ) : (
+                          <img
+                            src={USDT}
+                            className="w-5 h-5"
+                            alt="error"
+                          />
+                        )
                       }
                     >
-                      USDT
-                    </Dropdown.Item>
-                  </Dropdown>
-                )}
+                      <Dropdown.Item
+                        onSelect={() => selectedMenu(false, 0)}
+                        icon={<Solana />}
+                      >
+                        BUSD
+                      </Dropdown.Item>
+                    </Dropdown>
+                  ) : (
+                    <Dropdown
+                      activeKey="1"
+                      classPrefix="flex bg-color-1 dark:bg-black busd"
+                      title={migration ? "Nextep BNB chain" : "BUSD"}
+                      icon={
+                        migration ? (
+                          <img src={NextBnB} alt="error" className="w-5" />
+                        ) : (
+                          <Solana />
+                        )
+                      }
+                    >
+                      <Dropdown.Item
+                        onSelect={() => selectedMenu(true, 1)}
+                        icon={
+                          <img
+                            src={USDT}
+                            className="w-5 h-5"
+                            alt="error"
+                          />
+                        }
+                      >
+                        USDT
+                      </Dropdown.Item>
+                    </Dropdown>
+                  )}
+                </div>
               </div>
             </div>
 
-            <p className="font-inter text-slate-400 text-sm mb-2">
-              You receive
-            </p>
-            <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-2 rounded-xl sm:w-[100%]">
-              <div className="flex items-center">
-                <div className="flex flex-col">
-                  <input
-                    onChange={(e) => onPayChange(e)}
-                    value={pay}
-                    type="text"
-                    onKeyPress={(event) => {
-                      if (!/[0-9.]/.test(event.key)) {
-                        event.preventDefault();
-                      }
-                    }}
-                    className="outline-style-1 font-inter text-base text-color-1 dark:text-slate-100 bg-color-1 dark:bg-black-1 sm:w-[100%]"
-                  />
-                </div>
-              </div>
-              <div className="flex items-center">
-                <img src={CXE} alt="error" />
-                <p className="font-inter text-color-1 dark:text-white text-base pr-2 pl-2 mg-style-0">
-                  {migration ? "Nextep Nxchain" : "CXS"}
+            <div>
+              <div className="flex justify-between">
+                <p className="font-inter text-slate-400 text-sm mb-2">
+                  You receive
                 </p>
+                <div className="dark:text-white text-black mr-4">My CXS Balance : {cxsAmount ? cxsAmount : 0}</div>
+              </div>
+              <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-2 rounded-xl sm:w-[100%]">
+                <div className="flex items-center">
+                  <div className="flex flex-col">
+                    <input
+                      onChange={(e) => onPayChange(e)}
+                      value={pay}
+                      type="text"
+                      onKeyPress={(event) => {
+                        if (!/[0-9.]/.test(event.key)) {
+                          event.preventDefault();
+                        }
+                      }}
+                      className="outline-style-1 font-inter text-base text-color-1 dark:text-slate-100 bg-color-1 dark:bg-black-1 sm:w-[100%]"
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <img src={Img} width={25} alt="error" />
+                  <p className="font-inter text-color-1 dark:text-white text-base pr-2 pl-2 mg-style-0">
+                    {migration ? "Nextep Nxchain" : "CXS"}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -256,7 +265,7 @@ export const Presale = ({ migration }) => {
             </a>
           </div>
 
-          <a href="mailto:contact@nextep-crypto.com" className="md:w-[100%]">
+          {/* <a href="mailto:contact@nextep-crypto.com" className="md:w-[100%]">
             <div className="flex items-center justify-center border border-black dark:border-white padding-9 border-opacity-10 sm:w-[100%]">
               <img
                 src={Mail}
@@ -267,7 +276,7 @@ export const Presale = ({ migration }) => {
                 Mail
               </p>
             </div>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
