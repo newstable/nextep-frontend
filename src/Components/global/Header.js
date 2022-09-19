@@ -16,13 +16,13 @@ export const Header = () => {
         </div>
 
         <div className="flex md:flex-1 sm:flex-none items-center">
-          <img
+          {/* <img
             alt="error"
             src={logo}
             className={`w-6 h-8 cursor-pointer duration-500`}
-          />
+          /> */}
           <h1
-            className={`nextep-font font-inter text-lg text-black dark:text-white text-bold font-bold ml-2 nextep-h1`}
+            className={`font-inter text-3xl text-bold font-bold ml-2 nextep-h1 text-1`}
           >
             Nextep
           </h1>

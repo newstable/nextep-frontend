@@ -860,12 +860,12 @@ video {
 }
 
 .light .rs-btn-default {
-    background-color: #f6f6f6 !important;
+    background-color: transparent !important;
     color: #0f0f0f !important
 }
 
 .light .rs-dropdown-menu {
-    background-color: #f6f6f6;
+    background-color: transparent;
     color: #0f0f0f !important;
     position: absolute;
     width: 93px

@@ -84,7 +84,7 @@ export const Presale = ({ migration }) => {
             <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : "Please connect Wallet"}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
                 <div className="flex items-center w-full">
-                  <img src={Img} alt="error" />
+                  {/* <img src={Img} alt="error" /> */}
                   <div className="flex flex-col ml-5 w-full">
                     <label className="label-style-1 font-inter text-color-1 dark:text-white text-base">
                       Address
@@ -131,7 +131,7 @@ export const Presale = ({ migration }) => {
                   {item ? (
                     <Dropdown
                       activeKey="1"
-                      classPrefix={migration ? "flex bg-color-1 dark:bg-black" : "flex bg-color-1 dark:bg-black usd"}
+                      classPrefix={migration ? "flex bg-color-1" : "flex bg-color-1 usd"}
                       title={migration ? "Nextep BNB chain" : "USDT"}
                       icon={
                         migration ? (
@@ -155,7 +155,7 @@ export const Presale = ({ migration }) => {
                   ) : (
                     <Dropdown
                       activeKey="1"
-                      classPrefix="flex bg-color-1 dark:bg-black busd"
+                      classPrefix="flex bg-color-1 busd"
                       title={migration ? "Nextep BNB chain" : "BUSD"}
                       icon={
                         migration ? (
@@ -208,7 +208,7 @@ export const Presale = ({ migration }) => {
                 </div>
                 <div className="flex items-center">
                   <img src={CXE} width={25} alt="error" />
-                  <p className="font-inter text-color-1 dark:text-white text-base pr-2 pl-2 mg-style-0">
+                  <p className="font-inter text-color-1 dark:text-white text-base pr-2 pl-2 mr-3 mg-style-0">
                     {migration ? "Nextep Nxchain" : "CXS"}
                   </p>
                 </div>
