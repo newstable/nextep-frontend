@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Switcher from "./Switcher";
-import logo from "../../Assets/images/logo-1.png";
+import logo from "../../Assets/images/lettre n (1) 2.svg";
 import iconMigration from "../../Assets/images/Vector (3).svg";
 import iconArow from "../../Assets/images/arrow (8) 1.svg";
 import toggle from "../../Assets/images/toggle.svg";

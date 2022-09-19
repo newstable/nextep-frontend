@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react";
-import Img from "../../Assets/images/logo-1.png";
+// import logo from "../../Assets/images/";
+import Img from "../../Assets/images/Rectangle 4374.svg";
+import CXE from "../../Assets/images/logo-1.png";
 import { ReactComponent as Solana } from "../../Assets/images/solana-sol-logo 1.svg";
 import Dex from "../../Assets/images/Frame 1000001031.svg";
 import Crypto from "../../Assets/images/website (4) 1.svg";
@@ -82,7 +84,7 @@ export const Presale = ({ migration }) => {
             <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : "Please connect Wallet"}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
                 <div className="flex items-center w-full">
-                  <img width={40} src={Img} alt="error" />
+                  <img src={Img} alt="error" />
                   <div className="flex flex-col ml-5 w-full">
                     <label className="label-style-1 font-inter text-color-1 dark:text-white text-base">
                       Address
@@ -205,7 +207,7 @@ export const Presale = ({ migration }) => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <img src={Img} width={25} alt="error" />
+                  <img src={CXE} width={25} alt="error" />
                   <p className="font-inter text-color-1 dark:text-white text-base pr-2 pl-2 mg-style-0">
                     {migration ? "Nextep Nxchain" : "CXS"}
                   </p>
