@@ -60,7 +60,7 @@
 }
 
 .bg-dropdown-1 {
-    background-color: #c3c3c3;
+    background-color: transparent;
 }
 
 .outline-style-1 {
@@ -70,6 +70,22 @@
 
 .rs-dropdown-menu {
     border-radius: 0 !important;
+}
+
+.max-btn {
+    border: 1px solid #575757;
+    border-radius: 40px;
+    padding: 2px 7px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.dark .dark\:.max-btn {
+    border: 1px solid #a7a7a7;
+    border-radius: 40px;
+    padding: 2px 7px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .outline-style-1:focus {

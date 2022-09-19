@@ -654,10 +654,6 @@ input:checked+.toggle-bg {
     background-color: rgb(24 24 24/var(--tw-bg-opacity)) !important;
 }
 
-.dark .dark\:bg-dropdown-1 {
-    background-color: rgb(29, 29, 29);
-}
-
 .dark .dark\:bg-black-1 {
     --tw-bg-opacity: 1;
     background-color: rgb(15 15 15/var(--tw-bg-opacity)) !important;
