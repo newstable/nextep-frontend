@@ -234,7 +234,19 @@ export const Presale = ({ migration }) => {
 
         <div className="flex items-center flex-col mt-6">
           <div className="flex mb-5 sm:flex-col sm:mb-4 sm:w-[100%]">
-            <a
+            <a href="mailto:contact@nextep-crypto.com" className="md:w-[100%]">
+              <div className="flex items-center justify-center border border-black dark:border-white padding-9 border-opacity-10 mr-4 sm:mr-[0px] sm:mb-[16px]">
+                <img
+                  src={Mail}
+                  className="brightness-0 dark:filter-none"
+                  alt="error"
+                />
+                <p className="font-inter text-color-1 dark:text-white text-base ml-3">
+                  Mail
+                </p>
+              </div>
+            </a>
+            {/* <a
               href="https://pancakeswap.finance/swap"
               target="_blank"
               rel="noreferrer"
@@ -249,7 +261,7 @@ export const Presale = ({ migration }) => {
                   DEX (Pancakeswap)
                 </p>
               </div>
-            </a>
+            </a> */}
 
             <a href="https://Nextepcrypto.com" target="_blank" rel="noreferrer">
               <div className="flex items-center justify-center border border-black dark:border-white padding-9 border-opacity-10">
