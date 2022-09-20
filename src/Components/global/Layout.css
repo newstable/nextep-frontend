@@ -56,6 +56,10 @@
     padding: 1.75rem;
 }
 
+.language-p-3 {
+    padding: 0.3rem 20px;
+}
+
 .padding-5 {
     padding: 38px 26px 0;
 }
@@ -71,17 +75,21 @@
 .my-h1 {
     line-height: 62px !important;
 }
-.multilanguage{
-        position: absolute;
-            bottom: 80px;
-            width: 74%;
+
+.multilanguage {
+    position: absolute;
+    bottom: 80px;
+    width: 74%;
 }
-.multilanguage li{
+
+.multilanguage li {
     background: #e7e7e7;
 }
-.dark .multilanguage li{
+
+.dark .multilanguage li {
     background: #0f0f0f;
 }
+
 @media (max-width:767px) {
     .multilanguage {
         position: relative;

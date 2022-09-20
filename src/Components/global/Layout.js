@@ -129,7 +129,18 @@ const Layout = () => {
             </span>
           </li> */}
         </ul>
-        <ul className="padding-top-11 multilanguage">
+        <div className={`flex items-center justify-between language-p-3 switcher-body rounded-3xl mx-3`}>
+          <div className={isEng ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => setIsEng(true)}>
+            <img src={usa} width={34} className="brightness-0 dark:filter-none pointer" alt="error" />
+          </div>
+
+          <div className="width-1 h-5 swithcer-ele mx-5"></div>
+
+          <div className={!isEng ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => setIsEng(false)}>
+            <img src={france} width={34} className="brightness-0 dark:filter-none pointer" alt="error" />
+          </div>
+        </div>
+        {/* <ul className="padding-top-11 multilanguage">
           <li
             onClick={() => setIsEng(!isEng)}
             className={`mt-10 flex rounded-md mb-5 cursor-pointer items-center multilanguage-contianer`}
@@ -139,9 +150,8 @@ const Layout = () => {
               :
               < img src={france} style={{ width: '30px', height: '30px' }} alt="error" />
             }
-            {/* <span className="">icon</span> */}
           </li>
-        </ul>
+        </ul> */}
         <Switcher open={open} />
       </div>
       <div className="flex-1 p-7 relative">
