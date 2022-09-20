@@ -128,7 +128,7 @@ export const Presale = ({ migration }) => {
                       value={receive}
                       type="text"
                       onKeyPress={(event) => {
-                        if (!/[0-9.]/.test(event.key)) {
+                        if (!/[0-9]/.test(event.key)) {
                           event.preventDefault();
                         }
                       }}
@@ -211,7 +211,7 @@ export const Presale = ({ migration }) => {
                       value={pay}
                       type="text"
                       onKeyPress={(event) => {
-                        if (!/[0-9.]/.test(event.key)) {
+                        if (!/[0-9]/.test(event.key)) {
                           event.preventDefault();
                         }
                       }}
