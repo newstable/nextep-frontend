@@ -32,16 +32,17 @@
 .dark .swithcer-ele {
     background: rgb(131, 131, 131) !important;
 }
-.multilanguage-contianer{
+
+.multilanguage-contianer {
     height: 50px;
-    padding-left:15px;
-        padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 @media (max-width:767px) {
     .switcher {
         position: relative;
         width: 100%;
-        bottom: 5px;
+        bottom: -15px;
     }
 }

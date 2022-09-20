@@ -129,7 +129,7 @@ const Layout = () => {
             </span>
           </li> */}
         </ul>
-        <div className={`flex items-center justify-between language-p-3 switcher-body rounded-3xl mx-3`}>
+        <div className={`${open ? "language-p-3" : ""} flex items-center justify-between switcher-body rounded-3xl mx-3`}>
           <div className={isEng ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => setIsEng(true)}>
             <img src={usa} width={34} className="brightness-0 dark:filter-none pointer" alt="error" />
           </div>
