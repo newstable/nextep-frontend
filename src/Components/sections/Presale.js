@@ -86,7 +86,8 @@ export const Presale = ({ migration }) => {
               {L['buy_cxs']}
             </h1>
             <p className="font-inter text-color-1 dark:text-slate-500 text-sm mb-4">
-              Connect your Wallet
+              {/* Select wallet */}
+              {L['select_wallet']}
             </p>
             <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : L["connectwallet"]}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
