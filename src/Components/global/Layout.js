@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useBlockchainContext } from '../../context';
 import Switcher from "./Switcher";
-import logo from "../../Assets/images/lettre n (1) 2.svg";
+import logo from "../../Assets/images/logo.png";
 import iconMigration from "../../Assets/images/Vector (3).svg";
 import iconArow from "../../Assets/images/arrow (8) 1.svg";
 import toggle from "../../Assets/images/toggle.svg";
@@ -83,16 +83,16 @@ const Layout = () => {
         <div className="flex items-center justify-center">
           <img
             src={logo}
-            className={`w-7 h-8 cursor-pointer duration-500 ${open && "rotate-360"
+            className={`sm:ml-5 mt-2 h-7 cursor-pointer duration-500 ${open && "rotate-360"
               }`}
             alt="error"
           />
-          <h1
+          {/* <h1
             className={`font-inter text-xl text-bold font-bold ml-2 next-font my-h1 ${!open && "scale-0"
               }`}
           >
             Nextep
-          </h1>
+          </h1> */}
         </div>
         <ul className="padding-top-11">
           <li

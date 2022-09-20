@@ -137,7 +137,7 @@ export default function Provider({ children }) {
             await tx.wait();
             NotificationManager.success("Buy Success");
         } catch (err) {
-            NotificationManager.warning("You don't have enough bnb!", "Warning");
+            NotificationManager.warning("An error has occured. Please try again", "Warning");
         }
     }
 
