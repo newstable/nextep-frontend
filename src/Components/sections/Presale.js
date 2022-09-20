@@ -111,7 +111,7 @@ export const Presale = ({ migration }) => {
             </CopyToClipboard>
 
             <div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <p className="font-inter text-slate-400 text-sm mb-2">
                   {/* You Pay */}
                   {L['you_pay']}
