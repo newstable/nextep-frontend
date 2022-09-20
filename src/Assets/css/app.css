@@ -679,6 +679,11 @@ input:checked+.toggle-bg {
     filter: none;
 }
 
+.dark .dark\:brightness-255 {
+    -webkit-filter: brightness(255);
+    filter: brightness(255);
+}
+
 .dark .dark\:hidden {
     display: none;
 }

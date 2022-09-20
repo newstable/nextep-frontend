@@ -76,7 +76,7 @@ const Layout = () => {
       >
         <img
           src={toggle}
-          className={`toggle brightness-0 hidden md:block sm:top-[53px] ${!open && "rotate-180"}`}
+          className={`toggle brightness-0 dark:filter-none hidden md:block sm:top-[53px] ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
           alt="error"
         />
@@ -131,13 +131,13 @@ const Layout = () => {
         </ul>
         <div className={`${open ? "language-p-3" : ""} flex items-center justify-between switcher-body rounded-3xl mx-3`}>
           <div className={isEng ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => setIsEng(true)}>
-            <img src={usa} width={34} className="brightness-0 dark:filter-none pointer" alt="error" />
+            <img src={usa} width={34} className="pointer" alt="error" />
           </div>
 
           <div className="width-1 h-5 swithcer-ele mx-5"></div>
 
           <div className={!isEng ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'} onClick={() => setIsEng(false)}>
-            <img src={france} width={34} className="brightness-0 dark:filter-none pointer" alt="error" />
+            <img src={france} width={34} className="pointer" alt="error" />
           </div>
         </div>
         {/* <ul className="padding-top-11 multilanguage">
