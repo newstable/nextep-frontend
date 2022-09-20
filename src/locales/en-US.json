@@ -4,6 +4,7 @@
     "select_wallet": "Select Wallet",
     "address": "Address",
     "wallet.connect": "Connect",
+    "connectwallet": "Please connect Wallet",
     "you_pay": "You pay",
     "my_balance": "My Balance",
     "receive": "You receive",

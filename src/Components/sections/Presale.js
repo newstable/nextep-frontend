@@ -34,12 +34,18 @@ export const Presale = ({ migration }) => {
   const [copied, setCopied] = useState(false);
 
   const onReceiveChange = (e) => {
-    setRecieveValue(e);
+    if (e == "")
+      setRecieveValue(0);
+    else
+      setRecieveValue(e);
     setPayValue(e * 1000);
   };
 
   const onPayChange = (e) => {
-    setPayValue(e.target.value);
+    if (e == "")
+      setPayValue(0);
+    else
+      setPayValue(e.target.value);
     setRecieveValue(e.target.value / 1000);
   };
 
@@ -83,7 +89,7 @@ export const Presale = ({ migration }) => {
               {/* Select wallet */}
               {L['select_wallet']}
             </p>
-            <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : "Please connect Wallet"}>
+            <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : L["connectwallet"]}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
                 <div className="flex items-center w-full">
                   {/* <img src={Img} alt="error" /> */}
@@ -94,7 +100,7 @@ export const Presale = ({ migration }) => {
                     </label>
                     <div className="flex flex-row justify-between">
                       <p className="font-inter text-slate-400 text-sm">
-                        {address ? address.slice(0, 8) + "..." + address.slice(address.length - 8, address) : "Please connect Wallet"}
+                        {address ? address.slice(0, 8) + "..." + address.slice(address.length - 8, address) : L["connectwallet"]}
                       </p>
                       <img src={Copy} width="28" className="dark:hidden"></img>
                       <img src={Copy_white} width="28" className="dark:block hidden"></img>
@@ -110,7 +116,7 @@ export const Presale = ({ migration }) => {
                   {/* You Pay */}
                   {L['you_pay']}
                 </p>
-                <div className="dark:text-white text-black mr-4">{L['my_balance']} : {amount ? amount : 0}
+                <div className="dark:text-white text-black mr-4">{L['my_balance']} : {amount ? amount.toFixed(2) : 0}
                   <button className="max-btn ml-2 dark:text-white text-black" onClick={() => onReceiveChange(amount)}>Max</button>
                 </div>
               </div>
@@ -119,7 +125,7 @@ export const Presale = ({ migration }) => {
                   <div className="flex flex-col">
                     <input
                       onChange={(e) => onReceiveChange(e.target.value)}
-                      value={receive}
+                      value={receive.toFixed(2)}
                       type="text"
                       onKeyPress={(event) => {
                         if (!/[0-9.]/.test(event.key)) {
@@ -195,14 +201,14 @@ export const Presale = ({ migration }) => {
                   {/* You receive */}
                   {L['receive']}
                 </p>
-                <div className="dark:text-white text-black mr-4">{L['cxs_bal']} : {cxsAmount ? cxsAmount : 0}</div>
+                <div className="dark:text-white text-black mr-4">{L['cxs_bal']} : {cxsAmount ? cxsAmount.toFixed(2) : 0}</div>
               </div>
               <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl sm:w-[100%]">
                 <div className="flex items-center flex-grow-7">
                   <div className="flex flex-col">
                     <input
                       onChange={(e) => onPayChange(e)}
-                      value={pay}
+                      value={pay.toFixed(2)}
                       type="text"
                       onKeyPress={(event) => {
                         if (!/[0-9.]/.test(event.key)) {
