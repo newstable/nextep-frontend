@@ -83,7 +83,7 @@ const Layout = () => {
         <div className="flex items-center justify-center">
           <img
             src={logo}
-            className={`sm:ml-5 mt-2 h-7 cursor-pointer duration-500 ${open && "rotate-360"
+            className={`sm:ml-7 mt-2 h-7 cursor-pointer duration-500 ${open && "rotate-360"
               }`}
             alt="error"
           />

@@ -3868,6 +3868,10 @@ input:checked+.toggle-bg {
     .mr-5 {
         margin-right: 1.7rem;
     }
+
+    .sm\:ml-7 {
+        margin-left: 1.5rem
+    }
 }
 
 .svgMap-map-wrapper {
