@@ -14,6 +14,11 @@ import {
 import { delay, handleAlert, toBigNum, fromBigNum } from "../utils";
 import { NotificationManager } from "react-notifications";
 
+const locales = {
+    "usa": require('../locales/en-US.json'),
+    "france": require('../locales/fr-FR.json'),
+};
+
 const BlockchainContext = createContext();
 
 export function useBlockchainContext() {
@@ -27,7 +32,10 @@ function reducer(state, { type, payload }) {
     };
 }
 
+
 const INIT_STATE = {
+    lang: "usa",
+    L: locales["usa"],
     signer: "",
     amount: 0,
     cxsAmount: 0,

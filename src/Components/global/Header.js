@@ -2,13 +2,17 @@ import React from "react";
 import Wallet from "../../Assets/images/Vector (8).svg";
 import logo from "../../Assets/images/lettre n (1) 2.svg";
 import ConnectWalletButton from "./ConnectWalletButton";
+import { useBlockchainContext } from '../../context';
+
 import './Header.css';
 export const Header = () => {
+  const [state] = useBlockchainContext();
+  const { L } = state;
   return (
     <>
       <div className="flex justify-between items-center">
-        <div className="md:hidden">
-          <p className="good-morning font-inter font-semibold text-black dark:text-white">👏🏻Good morning.</p>
+        <div className="md:hidden" style={{ width: "200px" }}>
+          <p className="good-morning font-inter font-semibold text-black dark:text-white">👏🏻{L['good']}.</p>
         </div>
 
         <div className="hidden md:block w-5 md:flex-1 sm:flex-none">
@@ -27,7 +31,9 @@ export const Header = () => {
             Nextep
           </h1>
         </div>
-        <ConnectWalletButton img={"Wallet"} styleNames={"wallet-btn flex items-center cursor-pointer"} styleP={"font-inter white ml-3 wallet-p sm:hidden"} />
+        <div style={{ width: "200px" }} className="flex">
+          <ConnectWalletButton img={"Wallet"} styleNames={"wallet-btn flex items-center cursor-pointer ml-auto"} styleP={"font-inter white ml-3 wallet-p sm:hidden"} />
+        </div>
       </div>
     </>
   );

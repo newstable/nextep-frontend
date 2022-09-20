@@ -113,7 +113,8 @@ const ConnectButton = ({ styleNames, img, styleP }) => {
                         <img src={Wallet} alt="error" />
                         : ""}
                     <p className={styleP}>
-                        Connect Wallet
+                        {/* Connect Wallet */}
+                        {state.L['connect']}
                     </p>
                 </button>
             ) : (

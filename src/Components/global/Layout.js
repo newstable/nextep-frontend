@@ -1,17 +1,32 @@
 import { useState, useEffect } from "react";
+import { useBlockchainContext } from '../../context';
 import Switcher from "./Switcher";
 import logo from "../../Assets/images/lettre n (1) 2.svg";
 import iconMigration from "../../Assets/images/Vector (3).svg";
 import iconArow from "../../Assets/images/arrow (8) 1.svg";
 import toggle from "../../Assets/images/toggle.svg";
+
+import france from "../../Assets/france.png";
+import usa from "../../Assets/usa.png";
+
 import { Presale } from "../sections/Presale";
 import { Header } from "./Header";
 import './Layout.css';
+
+const locales = {
+  "usa": require('../../locales/en-US.json'),
+  "france": require('../../locales/fr-FR.json'),
+};
 
 const Layout = () => {
   const [open, setOpen] = useState(true);
   const [presale, setPresaleActive] = useState(true);
   const [migration, setMigrationActive] = useState(false);
+  const [isEng, setIsEng] = useState(true);
+
+  const [state, { dispatch }] = useBlockchainContext();
+  const { L } = state;
+
 
   const [screenSize, getDimension] = useState(window.innerWidth);
   const setDimension = () => {
@@ -26,6 +41,23 @@ const Layout = () => {
       setOpen(true);
     }
   }, [screenSize])
+
+  useEffect(() => {
+    if (isEng) {
+      dispatch({
+        type: "L",
+        payload: locales["usa"]
+      })
+    } else {
+      dispatch({
+        type: "L",
+        payload: locales["france"]
+      })
+    }
+  }, [isEng])
+  useEffect(() => {
+    window.localStorage.setItem('lang', 'usa')
+  }, [])
   const activePresale = () => {
     setPresaleActive(true);
     setMigrationActive(false);
@@ -62,7 +94,7 @@ const Layout = () => {
             Nextep
           </h1>
         </div>
-        <ul className="padding-11">
+        <ul className="padding-top-11">
           <li
             onClick={() => activePresale()}
             className={`mt-10 flex  rounded-md py-3 px-2 mb-5 cursor-pointer items-center 
@@ -75,9 +107,12 @@ const Layout = () => {
                 } origin-left duration-200 text-base ml-4 dark:white ${presale ? "white" : "site-grey-color"
                 }`}
             >
-              Presale
+              {/* Presale */}
+              {L['presale']}
             </span>
           </li>
+
+
           {/* <li
             onClick={() => activeMigration()}
             className={`flex  rounded-md py-3 mb-5 cursor-pointer items-center 
@@ -93,6 +128,19 @@ const Layout = () => {
               Migration
             </span>
           </li> */}
+        </ul>
+        <ul className="padding-top-11 multilanguage">
+          <li
+            onClick={() => setIsEng(!isEng)}
+            className={`mt-10 flex rounded-md mb-5 cursor-pointer items-center multilanguage-contianer`}
+          >
+            {isEng ?
+              <img src={usa} style={{ width: '34px', height: '39px' }} alt="error" />
+              :
+              < img src={france} style={{ width: '30px', height: '30px' }} alt="error" />
+            }
+            {/* <span className="">icon</span> */}
+          </li>
         </ul>
         <Switcher open={open} />
       </div>

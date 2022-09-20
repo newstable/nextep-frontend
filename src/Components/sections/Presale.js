@@ -30,7 +30,7 @@ export const Presale = ({ migration }) => {
   const [receive, setRecieveValue] = useState(0);
   const [pay, setPayValue] = useState(0);
   const [item, setItemActive] = useState(false);
-  const { address, tokenAddress, amount, cxsAmount } = state;
+  const { address, tokenAddress, amount, cxsAmount, L } = state;
   const [copied, setCopied] = useState(false);
 
   const onReceiveChange = (e) => {
@@ -76,10 +76,12 @@ export const Presale = ({ migration }) => {
         <div className="px-8 py-7 bg-white dark:bg-black rounded-3xl">
           <div>
             <h1 className="font-inter text-black dark:text-white text-lg font-semibold mb-3 pb-0">
-              Buy CXS Coin
+              {/* Buy CXS Coin */}
+              {L['buy_cxs']}
             </h1>
             <p className="font-inter text-color-1 dark:text-slate-500 text-sm mb-4">
-              Select wallet
+              {/* Select wallet */}
+              {L['select_wallet']}
             </p>
             <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : "Please connect Wallet"}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
@@ -87,7 +89,8 @@ export const Presale = ({ migration }) => {
                   {/* <img src={Img} alt="error" /> */}
                   <div className="flex flex-col ml-5 w-full">
                     <label className="label-style-1 font-inter text-color-1 dark:text-white text-base">
-                      Address
+                      {/* Address */}
+                      {L['address']}
                     </label>
                     <div className="flex flex-row justify-between">
                       <p className="font-inter text-slate-400 text-sm">
@@ -104,9 +107,10 @@ export const Presale = ({ migration }) => {
             <div>
               <div className="flex justify-between">
                 <p className="font-inter text-slate-400 text-sm mb-2">
-                  You Pay
+                  {/* You Pay */}
+                  {L['you_pay']}
                 </p>
-                <div className="dark:text-white text-black mr-4">My Balance : {amount ? amount : 0}
+                <div className="dark:text-white text-black mr-4">{L['my_balance']} : {amount ? amount : 0}
                   <button className="max-btn ml-2 dark:text-white text-black" onClick={() => onReceiveChange(amount)}>Max</button>
                 </div>
               </div>
@@ -188,9 +192,10 @@ export const Presale = ({ migration }) => {
             <div>
               <div className="flex justify-between">
                 <p className="font-inter text-slate-400 text-sm mb-2">
-                  You receive
+                  {/* You receive */}
+                  {L['receive']}
                 </p>
-                <div className="dark:text-white text-black mr-4">My CXS Balance : {cxsAmount ? cxsAmount : 0}</div>
+                <div className="dark:text-white text-black mr-4">{L['cxs_bal']} : {cxsAmount ? cxsAmount : 0}</div>
               </div>
               <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl sm:w-[100%]">
                 <div className="flex items-center flex-grow-7">
@@ -225,7 +230,8 @@ export const Presale = ({ migration }) => {
                 </button>
                 :
                 <button onClick={onBuy} className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
-                  VALIDATE
+                  {/* VALIDATE */}
+                  {L['validate']}
                 </button>
               :
               <div className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%] flex-center">
@@ -246,7 +252,8 @@ export const Presale = ({ migration }) => {
                   alt="error"
                 />
                 <p className="font-inter text-color-1 dark:text-white text-base ml-3">
-                  Mail
+                  {/* Mail */}
+                  {L['mail']}
                 </p>
               </div>
             </a>
