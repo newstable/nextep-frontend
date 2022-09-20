@@ -133,18 +133,11 @@ export default function Provider({ children }) {
             var approve = await erc.approve(Contrats.presale.address, toBigNum(amount, 18));
             await approve.wait();
             var signedPresaleContract = presaleContract.connect(state.signer);
-            // var addCoin = await signedPresaleContract.addStableCoin("0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7", true);
-            // await addCoin.wait();
-            // console.log("added");
-            // var addCoin1 = await signedPresaleContract.addStableCoin("0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684", true);
-            // await addCoin1.wait();
-            // console.log("added");
             var tx = await signedPresaleContract.buyWithStableCoin(state.tokenAddress, toBigNum(amount, 18));
             await tx.wait();
             NotificationManager.success("Buy Success");
         } catch (err) {
-            console.log(err.message);
-            NotificationManager.warning("An error has occurred.Please try again", "Warning");
+            NotificationManager.warning("You don't have enough bnb!", "Warning");
         }
     }
 
