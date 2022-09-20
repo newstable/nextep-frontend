@@ -1,6 +1,6 @@
 import React from "react";
 import Wallet from "../../Assets/images/Vector (8).svg";
-import logo from "../../Assets/images/lettre n (1) 2.svg";
+import logo from "../../Assets/images/logo.png";
 import ConnectWalletButton from "./ConnectWalletButton";
 import { useBlockchainContext } from '../../context';
 
@@ -28,7 +28,7 @@ export const Header = () => {
           <h1
             className={`font-inter text-3xl text-bold font-bold ml-2 nextep-h1 text-1 md:mr-6`}
           >
-            Nextep
+            <img src={logo} width={250}></img>
           </h1>
         </div>
         <div style={{ width: "200px" }} className="flex">

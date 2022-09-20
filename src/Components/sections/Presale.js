@@ -86,8 +86,7 @@ export const Presale = ({ migration }) => {
               {L['buy_cxs']}
             </h1>
             <p className="font-inter text-color-1 dark:text-slate-500 text-sm mb-4">
-              {/* Select wallet */}
-              {L['select_wallet']}
+              Connect your Wallet
             </p>
             <CopyToClipboard onCopy={() => setCopied(true)} text={address ? address : L["connectwallet"]}>
               <div className="flex relative justify-between items-center w-100 bg-color-1 dark:bg-black-1 pading-3 rounded-lg mb-6 sm:w-[100%] cursor-pointer">
@@ -116,7 +115,7 @@ export const Presale = ({ migration }) => {
                   {/* You Pay */}
                   {L['you_pay']}
                 </p>
-                <div className="dark:text-white text-black mr-4">{L['my_balance']} : {amount ? amount.toFixed(2) : 0}
+                <div className="dark:text-white text-black mr-4">{L['my_balance']} : {amount ? amount.toFixed(0) : 0}
                   <button className="max-btn ml-2 dark:text-white text-black" onClick={() => onReceiveChange(amount)}>Max</button>
                 </div>
               </div>
@@ -125,7 +124,7 @@ export const Presale = ({ migration }) => {
                   <div className="flex flex-col">
                     <input
                       onChange={(e) => onReceiveChange(e.target.value)}
-                      value={receive.toFixed(2)}
+                      value={receive}
                       type="text"
                       onKeyPress={(event) => {
                         if (!/[0-9.]/.test(event.key)) {
@@ -201,14 +200,14 @@ export const Presale = ({ migration }) => {
                   {/* You receive */}
                   {L['receive']}
                 </p>
-                <div className="dark:text-white text-black mr-4">{L['cxs_bal']} : {cxsAmount ? cxsAmount.toFixed(2) : 0}</div>
+                <div className="dark:text-white text-black mr-4">{L['cxs_bal']} : {cxsAmount ? cxsAmount.toFixed(0) : 0}</div>
               </div>
               <div className="flex justify-between items-center w-100 bg-color-1 dark:bg-black-1 p-4 rounded-xl sm:w-[100%]">
                 <div className="flex items-center flex-grow-7">
                   <div className="flex flex-col">
                     <input
                       onChange={(e) => onPayChange(e)}
-                      value={pay.toFixed(2)}
+                      value={pay}
                       type="text"
                       onKeyPress={(event) => {
                         if (!/[0-9.]/.test(event.key)) {
