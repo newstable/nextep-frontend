@@ -34,18 +34,12 @@ export const Presale = ({ migration }) => {
   const [copied, setCopied] = useState(false);
 
   const onReceiveChange = (e) => {
-    if (e == "")
-      setRecieveValue(0);
-    else
-      setRecieveValue(e);
+    setRecieveValue(e);
     setPayValue(e * 1000);
   };
 
   const onPayChange = (e) => {
-    if (e == "")
-      setPayValue(0);
-    else
-      setPayValue(e.target.value);
+    setPayValue(e.target.value);
     setRecieveValue(e.target.value / 1000);
   };
 
