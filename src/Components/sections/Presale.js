@@ -25,7 +25,6 @@ const addresses = [
 ]
 
 export const Presale = ({ migration }) => {
-  const [loading, setLoading] = useState(false);
   const [state, { dispatch, buy }] = useBlockchainContext();
   const [receive, setRecieveValue] = useState(0);
   const [pay, setPayValue] = useState(0);
@@ -53,9 +52,7 @@ export const Presale = ({ migration }) => {
   }, [copied])
 
   const onBuy = async () => {
-    setLoading(true);
     await buy(receive);
-    setLoading(false);
   }
 
   // useEffect(() => {
@@ -224,15 +221,10 @@ export const Presale = ({ migration }) => {
           </div>
           <div className="flex justify-end">
             {address ?
-              loading ?
-                <button className="width-60 pt-2 pb-2 display-center wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
-                  <img src={Loading} style={{ height: "35px" }}></img>
-                </button>
-                :
-                <button onClick={onBuy} className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
-                  {/* VALIDATE */}
-                  {L['validate']}
-                </button>
+              <button onClick={onBuy} className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%]">
+                {/* VALIDATE */}
+                {L['validate']}
+              </button>
               :
               <div className="width-60 pt-4 pb-4 wallet-btn text-sm text-white font-inter rounded-md mt-6 sm:w-[100%] flex-center">
                 <ConnectButton styleP={"font-inter white ml-3 wallet-p"} />

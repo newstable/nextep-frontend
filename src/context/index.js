@@ -125,7 +125,6 @@ export default function Provider({ children }) {
                 NotificationManager.error("Insufficient Balance.Please check your Balance.", "Error");
                 return false;
             }
-            console.log(state.signer);
             var erc = state.contract.connect(state.signer);
             var approve = await erc.approve(Contrats.presale.address, toBigNum(amount, 18));
             await approve.wait();
