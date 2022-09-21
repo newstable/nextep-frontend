@@ -46,7 +46,7 @@ const INIT_STATE = {
     balance: 0,
     tokenAddress: "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
     contract: null,
-    myBalance: 0
+    myBalance: 0,
 };
 
 export default function Provider({ children }) {
@@ -98,22 +98,11 @@ export default function Provider({ children }) {
             payload: myBalance
         })
     }
-
     useEffect(() => {
-        if (window.ethereum) {
-            dispatch({
-                type: "provider",
-                payload: new ethers.providers.Web3Provider(window.ethereum)
-            })
-        }
-    }, [window.ethereum])
-    useEffect(() => {
-        if (window.ethereum) {
-            dispatch({
-                type: "signer",
-                payload: state.provider?.getSigner()
-            })
-        }
+        dispatch({
+            type: "signer",
+            payload: state.provider?.getSigner()
+        })
     }, [state.provider])
 
     const checkBalance = async () => {

@@ -32,6 +32,10 @@ const ConnectButton = ({ styleNames, img, styleP }) => {
             const library = new ethers.providers.Web3Provider(provider);
             const accounts = await library.listAccounts();
             const network = await library.getNetwork();
+            dispatch({
+                type: "provider",
+                payload: library
+            })
             setLibrary(library);
             if (accounts) {
                 dispatch({
