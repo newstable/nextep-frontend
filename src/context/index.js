@@ -99,10 +99,18 @@ export default function Provider({ children }) {
         })
     }
     useEffect(() => {
-        dispatch({
-            type: "signer",
-            payload: state.provider?.getSigner()
-        })
+        console.log(state.provider);
+        if (state.provider) {
+            dispatch({
+                type: "signer",
+                payload: state.provider?.getSigner()
+            })
+        } else {
+            dispatch({
+                type: "signer",
+                payload: null
+            })
+        }
     }, [state.provider])
 
     const checkBalance = async () => {
